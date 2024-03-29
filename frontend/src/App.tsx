@@ -1,9 +1,14 @@
-import { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
+
 
 const App = () => {
-
-
-  return <></>
+	return (
+		<>
+			<Routes>
+				<Route path="/" element={<Notes />} />
+			</Routes>
+		</>
+	);
 };
 
 export default App;
