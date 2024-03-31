@@ -1,19 +1,26 @@
 // BigTwoGame.tsx
 import React, { useState } from 'react';
-import { Card, Player, Suit, Rank } from './types';
+import { Card, Player, Suit, Rank, GameState } from './types';
 
 const Game: React.FC = () => {
-	const [currentTurn, setCurrentTurn] = useState<number>(0);
 	const [gameStarted, setGameStarted] = useState<boolean>(false);
+	const [currentTurn, setCurrentTurn] = useState<number>(0);
+	const [players, setPlayers] = useState<Player[]>([]);
 
 	const startNewGame = () => {
 		setCurrentTurn(0);
 		setGameStarted(true);
+		setPlayers(initializePlayers);
+	};
+
+	const initializePlayers = (): Player[] => {
+		let shuffled_deck: Card[] = [];
+
+		return [];
 	};
 
 	return (
 		<div>
-			<h1>Big Two</h1>
 			{gameStarted ? (
 				<div>
 					<h2>Current Turn: Player {currentTurn + 1}</h2>
