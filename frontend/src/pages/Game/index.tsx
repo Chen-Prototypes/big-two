@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { Card, Player, suits, ranks } from './types';
+import { Card, Player, suits, ranks } from '../types';
+
+import DisplayHand from './DisplayHand';
 
 const Game: React.FC = () => {
 	const [gameStarted, setGameStarted] = useState<boolean>(false);
@@ -38,7 +40,16 @@ const Game: React.FC = () => {
 			{gameStarted ? (
 				<div>
 					<h2>Current Turn: Player {currentTurn + 1}</h2>
-					<button onClick={() => {}}>Play Hand</button>
+
+					<DisplayHand player={players[currentTurn]} />
+
+					<button
+						onClick={() => {
+							setCurrentTurn((prev) => (prev + 1) % 4);
+						}}
+					>
+						Play Hand
+					</button>
 				</div>
 			) : (
 				<button onClick={startNewGame}>Start New Game</button>
