@@ -23,7 +23,6 @@ export interface Card {
 export interface Player {
 	id: number;
 	hand: Card[];
-	isTurn: boolean;
 }
 
 export interface GameState {
@@ -74,3 +73,20 @@ export const suitValues: { [key in Suit]: number } = {
 	Clubs: 2,
 	Diamonds: 1,
 };
+
+export const suits: Suit[] = ['Hearts', 'Diamonds', 'Clubs', 'Spades'];
+export const ranks: Rank[] = [
+	'3',
+	'4',
+	'5',
+	'6',
+	'7',
+	'8',
+	'9',
+	'10',
+	'J',
+	'Q',
+	'K',
+	'A',
+	'2',
+];

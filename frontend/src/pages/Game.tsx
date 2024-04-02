@@ -1,6 +1,5 @@
-// BigTwoGame.tsx
 import React, { useState } from 'react';
-import { Card, Player, Suit, Rank, GameState } from './types';
+import { Card, Player, suits, ranks } from './types';
 
 const Game: React.FC = () => {
 	const [gameStarted, setGameStarted] = useState<boolean>(false);
@@ -10,13 +9,28 @@ const Game: React.FC = () => {
 	const startNewGame = () => {
 		setCurrentTurn(0);
 		setGameStarted(true);
-		setPlayers(initializePlayers);
+		initializePlayers;
 	};
 
-	const initializePlayers = (): Player[] => {
+	const initializePlayers = () => {
 		let shuffled_deck: Card[] = [];
 
-		return [];
+		suits.forEach((suit) => {
+			ranks.forEach((rank) => {
+				shuffled_deck.push({ suit, rank });
+			});
+		});
+		shuffled_deck = shuffled_deck.sort(() => Math.random() - 0.5);
+
+		const new_players: Player[] = Array.from({ length: 4 }, (_, i) => {
+			const hand: Card[] = shuffled_deck.slice(i * 13, (i + 1) * 13);
+			return {
+				id: i,
+				hand: hand,
+			};
+		});
+
+		setPlayers(new_players);
 	};
 
 	return (
