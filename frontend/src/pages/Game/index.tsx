@@ -9,9 +9,9 @@ const Game: React.FC = () => {
 	const [players, setPlayers] = useState<Player[]>([]);
 
 	const startNewGame = () => {
+		initializePlayers();
 		setCurrentTurn(0);
 		setGameStarted(true);
-		initializePlayers;
 	};
 
 	const initializePlayers = () => {
