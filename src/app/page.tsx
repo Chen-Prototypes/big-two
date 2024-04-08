@@ -3,20 +3,15 @@ import './globals.css';
 
 const Page: React.FC = () => {
 	return (
-		<div className="bg-gray-100 p-8">
-			<h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold font-raleway text-blue-600">
+		<div className="flex flex-col justify-start items-center h-screen text-center pt-8">
+			<h1 className="text-5xl md:text-6xl lg:text-8xl font-extrabold text-white leading-none mb-2 mx-auto w-full max-w-screen-lg">
 				HEROES VS DRAGON
 			</h1>
-			<p className="mt-4 text-lg md:text-xl font-avenir text-gray-700">
+			<p className="text-md md:text-lg lg:text-xl font-light text-white max-w-3xl mt-16 leading-relaxed text-left">
 				Heroes vs Dragon is an RPG turn-based card game that features 5
 				different roles to choose from. There are 4 "Heroes" - a Knight, a Mage,
 				a Healer, and a Hammer - and finally, there is the Dragon.
 			</p>
-			<div>
-				{/* If you have a logo image, you can include it like so: */}
-				{/* <img src="/path-to-your-logo.png" alt="Heroes vs Dragon Logo" /> */}
-			</div>
-			{/* Your chevron or other content goes here */}
 		</div>
 	);
 };
