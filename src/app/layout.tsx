@@ -5,7 +5,7 @@ const RootLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 		<html
 			lang="en"
 			style={{
-				backgroundImage: `url('/background.png')`, // Direct reference from the public directory
+				backgroundImage: `url('/background.png')`,
 				backgroundSize: 'cover',
 				backgroundPosition: 'center',
 				minHeight: '100vh',
