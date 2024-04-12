@@ -5,32 +5,9 @@ import { motion } from 'framer-motion';
 import './globals.css';
 import './Home.module.css';
 
-const instructions = [
-	{
-		step: 'Role Selection',
-		details:
-			'Each player should choose a role. One of the players must be the Dragon, and the other players may choose any of the 4 other roles (Mage, Hammer (Tank), Healer, Knight), with none of the 5 roles repeating.',
-	},
-	{
-		step: 'Setting Up Cards',
-		details:
-			'Once roles are chosen, each player will pick up their respective role’s movement deck (8 cards total) and HP cards.',
-	},
-	{
-		step: 'First Moves',
-		details:
-			'The Dragon makes the first move in each game. Then, each Hero will take a turn, placing one of their 3 movement cards to either attack the Dragon, defend in some manner, OR use their special ability.',
-	},
-	{
-		step: 'Rotation',
-		details:
-			'The game will continue, with all of the players taking a turn, until either the Dragon is defeated (Heroes win), or all Heroes are defeated (Dragon wins!).',
-	},
-];
-
 const Page: React.FC = () => {
 	return (
-		<div className="flex flex-col justify-start items-center h-screen text-center pt-8">
+		<div className="flex flex-col justify-start items-center h-screen text-center">
 			<motion.h1
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
@@ -42,8 +19,8 @@ const Page: React.FC = () => {
 			<motion.p
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
-				transition={{ duration: 1, delay: 2.3 }}
-				className="text-md md:text-lg lg:text-xl font-light text-white max-w-3xl mt-16 leading-relaxed text-left"
+				transition={{ duration: 1, delay: 2.5 }}
+				className="text-md md:text-lg lg:text-xl font-light text-white max-w-3xl mt-10 leading-relaxed text-left"
 			>
 				Heroes vs Dragon is an RPG turn-based card game that features 5
 				different roles to choose from. There are 4 "Heroes" - a Knight, a Mage,
@@ -52,8 +29,8 @@ const Page: React.FC = () => {
 			<motion.p
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
-				transition={{ duration: 1, delay: 3.3 }}
-				className="text-md md:text-lg lg:text-xl font-light text-white max-w-3xl mt-16 leading-relaxed text-left"
+				transition={{ duration: 1, delay: 4 }}
+				className="text-md md:text-lg lg:text-xl font-light text-white max-w-3xl mt-8 leading-relaxed text-left"
 			>
 				In this game, prepare to wield your sword as the Knight, brew potions as
 				the Healer to heal your team, brave the Dragon’s attacks with your
@@ -64,7 +41,7 @@ const Page: React.FC = () => {
 				<motion.div
 					initial={{ opacity: 0, y: 50 }}
 					animate={{ opacity: 1, y: 0 }}
-					transition={{ duration: 1, delay: 2 }}
+					transition={{ duration: 1, delay: 5.5 }}
 					className="bg-gray-800 p-4 rounded-lg shadow-lg"
 				>
 					<h2 className="text-lg md:text-xl lg:text-2xl font-bold text-white mb-4">
@@ -78,39 +55,7 @@ const Page: React.FC = () => {
 				<motion.div
 					initial={{ opacity: 0, y: 50 }}
 					animate={{ opacity: 1, y: 0 }}
-					transition={{ duration: 1, delay: 2 }}
-					className="bg-gray-800 p-4 rounded-lg shadow-lg"
-				>
-					<h2 className="text-lg md:text-xl lg:text-2xl font-bold text-white mb-4">
-						Role Selection
-					</h2>
-					<p className="text-md md:text-lg lg:text-xl font-light text-white">
-						Each player should choose a role. One of the players must be the
-						Dragon, and the other players may choose any of the 4 other roles
-						(Mage, Hammer (Tank), Healer, Knight), with none of the 5 roles
-						repeating.
-					</p>
-				</motion.div>
-				<motion.div
-					initial={{ opacity: 0, y: 50 }}
-					animate={{ opacity: 1, y: 0 }}
-					transition={{ duration: 1, delay: 2 }}
-					className="bg-gray-800 p-4 rounded-lg shadow-lg"
-				>
-					<h2 className="text-lg md:text-xl lg:text-2xl font-bold text-white mb-4">
-						Role Selection
-					</h2>
-					<p className="text-md md:text-lg lg:text-xl font-light text-white">
-						Each player should choose a role. One of the players must be the
-						Dragon, and the other players may choose any of the 4 other roles
-						(Mage, Hammer (Tank), Healer, Knight), with none of the 5 roles
-						repeating.
-					</p>
-				</motion.div>
-				<motion.div
-					initial={{ opacity: 0, y: 50 }}
-					animate={{ opacity: 1, y: 0 }}
-					transition={{ duration: 1, delay: 2 }}
+					transition={{ duration: 1, delay: 7 }}
 					className="bg-gray-800 p-4 rounded-lg shadow-lg"
 				>
 					<h2 className="text-lg md:text-xl lg:text-2xl font-bold text-white mb-4">
@@ -124,6 +69,9 @@ const Page: React.FC = () => {
 					</p>
 				</motion.div>
 			</div>
+			<motion.button className="mx-auto px-6 py-3 mt-10 bg-blue-600 text-white text-lg font-bold rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 shadow-lg">
+				Play Now
+			</motion.button>
 		</div>
 	);
 };
