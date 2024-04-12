@@ -2,10 +2,14 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useRouter } from 'next/navigation';
+
 import './globals.css';
 import './Home.module.css';
 
 const Page: React.FC = () => {
+	const router = useRouter();
+
 	return (
 		<div className="flex flex-col justify-start items-center h-screen text-center">
 			<motion.h1
@@ -69,7 +73,12 @@ const Page: React.FC = () => {
 					</p>
 				</motion.div>
 			</div>
-			<motion.button className="mx-auto px-6 py-3 mt-10 bg-blue-600 text-white text-lg font-bold rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 shadow-lg">
+			<motion.button
+				className="mx-auto px-6 py-3 mt-10 bg-blue-600 text-white text-lg font-bold rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 shadow-lg"
+				onClick={() => {
+					router.push('/game');
+				}}
+			>
 				Play Now
 			</motion.button>
 		</div>
