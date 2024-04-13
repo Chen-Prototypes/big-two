@@ -1,5 +1,5 @@
-const Introduction = () => {
+const Game = () => {
 	return <>Hello</>;
 };
 
-export default Introduction;
+export default Game;
